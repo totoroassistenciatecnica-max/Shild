@@ -1,0 +1,314 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>index</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,500..900&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: cabeçalho fixo, hero em duas colunas (texto à esquerda, monitor de 4 câmeras à direita), seções em linhas e colunas sem cartões. */
+:root{
+  --bg:#ffffff;--surface:#ffffff;--band:#eff0f2;--ink:#17181b;--muted:#565a61;--line:#d8dadf;--accent:#8f6a0c;--gold:#d4af37;--gold-ink:#17181b;
+  --m-bg:#0c0d0f;--m-tile:#16181b;--m-fill:#23262b;--m-fill2:#363a41;--m-line:#7b808a;--m-txt:#e4e6ea;--m-rec:#ff5348;--m-det:#e8c14f;
+  --f-display:"Archivo","Arial Narrow",Arial,sans-serif;--f-body:"Figtree","Segoe UI",system-ui,sans-serif;--f-mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--f-body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surface);z-index:10}
+h1,h2,h3{font-family:var(--f-display);margin:0;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:3px}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sec{padding-block:72px}
+.band{background:var(--band)}
+h2{font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:760;font-stretch:108%;line-height:1.12}
+.lead{color:var(--muted);max-width:56ch;margin-top:14px}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--surface);border-bottom:1px solid var(--line)}
+.hb{display:flex;align-items:center;gap:20px;min-height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 1.2rem/1 var(--f-display);font-stretch:112%;margin-right:auto}
+.logo svg{flex:none}
+nav{display:flex;gap:24px}
+nav a{text-decoration:none;color:var(--muted);font-weight:500;font-size:.95rem}
+nav a:hover{color:var(--ink)}
+@media(max-width:820px){nav{display:none}}
+.btn{display:inline-block;padding:12px 20px;border-radius:6px;font-weight:600;font-size:1rem;text-decoration:none;text-align:center;border:1.5px solid transparent;cursor:pointer;font-family:var(--f-body)}
+.btn-p{background:var(--gold);color:var(--gold-ink)}
+.btn-p:hover{filter:brightness(1.08)}
+.btn-s{border-color:var(--ink);color:var(--ink)}
+.btn-s:hover{background:var(--ink);color:var(--bg)}
+header .btn{padding:9px 16px;font-size:.95rem}
+
+/* hero */
+.hero{padding-block:56px 72px}
+.hg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:48px;align-items:center}
+@media(max-width:900px){.hg{grid-template-columns:minmax(0,1fr);gap:36px}}
+h1{font-size:clamp(2.2rem,5.6vw,3.9rem);font-weight:800;font-stretch:112%;line-height:1.04;letter-spacing:-.02em}
+.hero .lead{font-size:1.1rem;max-width:46ch;margin-top:20px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+
+/* monitor */
+.mon{background:var(--m-bg);border-radius:10px;padding:10px;color:var(--m-txt);border:1px solid var(--line)}
+.mbar{display:flex;align-items:center;gap:10px;padding:2px 4px 10px;font:500 .78rem/1 var(--f-mono);flex-wrap:wrap}
+.mbar b{font-weight:500;margin-right:auto}
+.rec{display:inline-flex;align-items:center;gap:6px;color:var(--m-rec)}
+.rec i{width:9px;height:9px;border-radius:50%;background:var(--m-rec);animation:blink 1.4s steps(1) infinite}
+@keyframes blink{50%{opacity:.15}}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.tile{position:relative;background:var(--m-tile);overflow:hidden;border-radius:3px;min-width:0}
+.tile svg{display:block;width:100%;height:auto}
+.tile span{position:absolute;left:6px;top:5px;font:500 .68rem/1 var(--f-mono);color:var(--m-txt);background:#0c0d0fcc;padding:3px 5px;border-radius:2px}
+.s-fl{fill:var(--m-fill)}.s-f2{fill:var(--m-fill2)}.s-bg{fill:var(--m-tile)}.s-ln{fill:none;stroke:var(--m-line);stroke-width:1.2}
+.s-wh{fill:#0c0d0f;stroke:var(--m-line);stroke-width:1.2}
+.det{fill:none;stroke:var(--m-det);stroke-width:1.5}
+.dt{fill:var(--m-det);font:500 8px var(--f-mono)}
+.walk{animation:walk 7s ease-in-out infinite alternate}
+@keyframes walk{from{transform:translateX(0)}to{transform:translateX(92px)}}
+@media (prefers-reduced-motion:reduce){.walk,.rec i{animation:none}}
+
+/* services */
+.rows{margin-top:36px;border-bottom:1px solid var(--line)}
+.row{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:12px 40px;padding-block:24px;border-top:1px solid var(--line)}
+.row h3{font-size:1.2rem;font-weight:700;font-stretch:104%}
+.row p{color:var(--muted);max-width:62ch}
+@media(max-width:700px){.row{grid-template-columns:minmax(0,1fr)}}
+
+/* audience */
+.aud{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px;margin-top:36px}
+.aud>div{min-width:0;border-top:2px solid var(--gold);padding-top:18px}
+.aud h3{font-size:1.25rem;font-weight:700;font-stretch:106%;margin-bottom:8px}
+.aud p{color:var(--muted)}
+.aud ul{margin:14px 0 0;padding-left:18px;color:var(--ink)}
+.aud li{margin-bottom:4px}
+
+/* kit */
+.kit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:48px;align-items:start}
+@media(max-width:900px){.kit{grid-template-columns:minmax(0,1fr);gap:28px}}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line)}
+caption{text-align:left;font:700 1rem var(--f-display);padding:0 0 10px;font-stretch:106%}
+th,td{text-align:left;padding:12px 14px;border-top:1px solid var(--line);vertical-align:top}
+th{font-weight:600;width:36%}
+td{color:var(--muted)}
+.note{font-size:.9rem;color:var(--muted);margin-top:10px}
+
+/* process */
+.steps{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px}
+.steps li{min-width:0}
+.steps b{display:block;font:800 3rem/1 var(--f-display);font-stretch:112%;color:var(--accent);margin-bottom:10px}
+.steps h3{font-size:1.1rem;font-weight:700;margin-bottom:6px}
+.steps p{color:var(--muted);font-size:.98rem}
+
+/* faq */
+.faq{margin-top:28px;max-width:760px}
+details{border-top:1px solid var(--line);padding:16px 0}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--accent)}
+details[open] summary::after{content:"\2212"}
+details p{color:var(--muted);margin-top:10px;max-width:62ch}
+
+/* contact */
+.cg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
+@media(max-width:900px){.cg{grid-template-columns:minmax(0,1fr);gap:32px}}
+.info{margin-top:24px;display:grid;gap:10px;color:var(--muted)}
+.info b{color:var(--ink);font-weight:600}
+form{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px;display:grid;gap:14px}
+label{display:grid;gap:5px;font-weight:600;font-size:.92rem}
+input,select,textarea{font:400 1rem var(--f-body);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:10px 12px;width:100%}
+textarea{min-height:84px;resize:vertical}
+form .btn{width:100%}
+.help{font-size:.85rem;color:var(--muted)}
+
+footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);font-size:.92rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+</style>
+
+<header>
+  <div class="wrap hb">
+    <a class="logo" href="#topo" aria-label="Shield CFTV, início">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V6z"/><circle cx="12" cy="11" r="2.5"/></svg>
+      Shield CFTV
+    </a>
+    <nav aria-label="Principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#locais">Onde instalamos</a>
+      <a href="#kits">Aluguel</a>
+      <a href="#etapas">Como trabalhamos</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <a class="btn btn-p" href="#contato">Pedir orçamento</a>
+  </div>
+</header>
+
+<main id="topo">
+  <section class="hero">
+    <div class="wrap hg">
+      <div>
+        <h1>Segurança que você acompanha pelo celular</h1>
+        <p class="lead">A Shield instala e mantém câmeras de segurança em casas, comércios e condomínios, em sistema de aluguel com mensalidade. Você vê as imagens ao vivo e as gravações de onde estiver.</p>
+        <div class="cta">
+          <a class="btn btn-p" href="#contato">Pedir orçamento</a>
+          <a class="btn btn-s" href="#servicos">Ver serviços</a>
+        </div>
+      </div>
+
+      <div class="mon" role="group" aria-label="Exemplo de painel com quatro câmeras">
+        <div class="mbar"><b>Shield CFTV</b><time id="clk">--/--/---- --:--:--</time><span class="rec"><i></i>REC</span></div>
+        <div class="tiles">
+          <div class="tile"><span>CH 01 Entrada</span>
+            <svg viewBox="0 0 320 180" role="img" aria-label="Câmera da entrada com uma pessoa se aproximando da porta">
+              <rect class="s-bg" width="320" height="180"/><polygon class="s-fl" points="0,132 320,132 320,180 0,180"/>
+              <rect class="s-f2 s-ln" x="120" y="30" width="84" height="102"/><rect class="s-ln" x="112" y="24" width="100" height="108"/><circle cx="192" cy="84" r="2.5" fill="#7b808a"/>
+              <g class="walk"><circle cx="52" cy="82" r="8" class="s-f2"/><rect x="42" y="92" width="20" height="38" rx="6" class="s-f2"/><rect x="43" y="126" width="7" height="22" class="s-f2"/><rect x="54" y="126" width="7" height="22" class="s-f2"/>
+                <rect class="det" x="32" y="66" width="40" height="86"/><text class="dt" x="32" y="62">MOVIMENTO</text></g>
+            </svg></div>
+          <div class="tile"><span>CH 02 Garagem</span>
+            <svg viewBox="0 0 320 180" role="img" aria-label="Câmera da garagem com um carro estacionado">
+              <rect class="s-bg" width="320" height="180"/><polygon class="s-fl" points="0,126 320,126 320,180 0,180"/>
+              <rect class="s-f2" x="18" y="0" width="18" height="136"/><rect class="s-f2" x="284" y="0" width="18" height="136"/>
+              <path class="s-ln" d="M60 180L104 140M260 180L216 140M160 180V146"/>
+              <rect class="s-f2 s-ln" x="88" y="98" width="144" height="36" rx="10"/><rect class="s-f2 s-ln" x="116" y="72" width="88" height="32" rx="8"/>
+              <circle class="s-wh" cx="122" cy="136" r="11"/><circle class="s-wh" cx="198" cy="136" r="11"/>
+            </svg></div>
+          <div class="tile"><span>CH 03 Balcão</span>
+            <svg viewBox="0 0 320 180" role="img" aria-label="Câmera do balcão de atendimento de uma loja">
+              <rect class="s-bg" width="320" height="180"/><polygon class="s-fl" points="0,150 320,150 320,180 0,180"/>
+              <rect class="s-f2" x="20" y="34" width="280" height="4"/><rect class="s-f2" x="20" y="70" width="280" height="4"/>
+              <rect class="s-fl s-ln" x="34" y="14" width="30" height="20"/><rect class="s-fl s-ln" x="76" y="18" width="24" height="16"/><rect class="s-fl s-ln" x="190" y="12" width="36" height="22"/>
+              <rect class="s-fl s-ln" x="52" y="50" width="34" height="20"/><rect class="s-fl s-ln" x="140" y="52" width="28" height="18"/><rect class="s-fl s-ln" x="236" y="48" width="38" height="22"/>
+              <rect class="s-f2 s-ln" x="40" y="112" width="240" height="48" rx="3"/><rect class="s-fl s-ln" x="206" y="90" width="42" height="22"/>
+            </svg></div>
+          <div class="tile"><span>CH 04 Quintal</span>
+            <svg viewBox="0 0 320 180" role="img" aria-label="Câmera do quintal com árvore e portão">
+              <rect class="s-bg" width="320" height="180"/><rect class="s-fl" x="0" y="20" width="320" height="116"/><polygon class="s-bg" points="0,136 320,136 320,180 0,180"/>
+              <rect class="s-ln" x="200" y="56" width="92" height="80"/><path class="s-ln" d="M216 56V136M232 56V136M248 56V136M264 56V136M280 56V136"/>
+              <circle class="s-f2" cx="72" cy="66" r="36"/><rect class="s-f2" x="67" y="98" width="10" height="40"/>
+              <path class="s-ln" d="M20 150L26 142M60 158L66 150M120 152L126 144M170 160L176 152M250 152L256 144"/>
+            </svg></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec band" id="servicos">
+    <div class="wrap">
+      <h2>O que a Shield faz</h2>
+      <p class="lead">Do projeto à manutenção, o mesmo time cuida do seu sistema de câmeras.</p>
+      <div class="rows">
+        <div class="row"><h3>Projeto e visita técnica</h3><p>Visitamos o local, definimos onde cada câmera vai ficar e quais pontos precisam de mais atenção antes de fechar o orçamento.</p></div>
+        <div class="row"><h3>Instalação de câmeras</h3><p>Câmeras, gravador, cabeamento e fonte instalados e testados. Você recebe o sistema funcionando e aprende a usar.</p></div>
+        <div class="row"><h3>Acesso pelo celular</h3><p>Configuramos o aplicativo para você ver as imagens ao vivo e rever gravações de qualquer lugar.</p></div>
+        <div class="row"><h3>Manutenção e suporte</h3><p>Troca de peças, limpeza de lentes, ajuste de ângulo e conferência da gravação nos sistemas instalados pela Shield.</p></div>
+        <div class="row"><h3>Aluguel de equipamentos</h3><p>Você não precisa comprar nada. Os equipamentos ficam instalados no seu local e você paga uma mensalidade.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="locais">
+    <div class="wrap">
+      <h2>Onde instalamos</h2>
+      <div class="aud">
+        <div><h3>Casas</h3><p>Imagens da entrada, da garagem e do quintal na palma da mão, inclusive à noite.</p>
+          <ul><li>Portão e porta de entrada</li><li>Garagem</li><li>Áreas externas</li></ul></div>
+        <div><h3>Comércios</h3><p>Acompanhe o caixa, o estoque e a porta da loja mesmo quando você não está lá.</p>
+          <ul><li>Caixa e balcão</li><li>Estoque</li><li>Entrada e calçada</li></ul></div>
+        <div><h3>Condomínios</h3><p>Cobertura de portaria, garagem e áreas comuns, com gravação que dá para consultar depois.</p>
+          <ul><li>Portaria e guarita</li><li>Garagens</li><li>Áreas comuns</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec band" id="kits">
+    <div class="wrap kit">
+      <div>
+        <h2>Aluguel de kits de câmeras</h2>
+        <p class="lead">Você começa com um kit de partida e amplia depois, sem investir na compra do equipamento. Paga uma mensalidade pelo que está instalado.</p>
+        <p class="lead">No orçamento você vê cada peça, a quantidade e o valor da mensalidade.</p>
+      </div>
+      <div class="tw">
+        <table>
+          <caption>Exemplo de kit de aluguel com 4 câmeras</caption>
+          <tr><th scope="row">Câmeras</th><td>4 unidades com visão noturna</td></tr>
+          <tr><th scope="row">Gravador</th><td>DVR de 4 canais</td></tr>
+          <tr><th scope="row">Armazenamento</th><td>HD para gravação contínua</td></tr>
+          <tr><th scope="row">Energia e cabos</th><td>Fonte, cabos e conectores</td></tr>
+          <tr><th scope="row">Serviço</th><td>Instalação, teste e acesso no celular</td></tr>
+        </table>
+        <p class="note">O kit final depende do local. Esta é uma configuração de partida.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="etapas">
+    <div class="wrap">
+      <h2>Como trabalhamos</h2>
+      <ol class="steps">
+        <li><b>1</b><h3>Visita e projeto</h3><p>Visitamos o local, medimos os pontos e ouvimos o que você precisa proteger.</p></li>
+        <li><b>2</b><h3>Orçamento</h3><p>Você recebe a lista de equipamentos com o valor da mensalidade.</p></li>
+        <li><b>3</b><h3>Instalação</h3><p>Instalamos, testamos cada câmera e configuramos o acesso no seu celular.</p></li>
+        <li><b>4</b><h3>Acompanhamento</h3><p>Acompanhamos o sistema e fazemos a manutenção para ele seguir gravando.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec band" id="duvidas">
+    <div class="wrap">
+      <h2>Dúvidas frequentes</h2>
+      <div class="faq">
+        <details><summary>Consigo ver as câmeras pelo celular?</summary><p>Sim. Deixamos o aplicativo instalado e configurado no seu celular, com imagens ao vivo e gravadas.</p></details>
+        <details><summary>Por quanto tempo as imagens ficam gravadas?</summary><p>Depende do tamanho do HD, do número de câmeras e da qualidade da imagem. No orçamento informamos quantos dias de gravação o seu sistema comporta.</p></details>
+        <details><summary>Vocês atendem sistemas instalados por outra empresa?</summary><p>Não. Atendemos apenas os sistemas instalados pela Shield.</p></details>
+        <details><summary>Posso comprar o equipamento?</summary><p>Não. Trabalhamos somente com aluguel: o equipamento fica instalado no seu local e você paga uma mensalidade.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="contato">
+    <div class="wrap cg">
+      <div>
+        <h2>Peça seu orçamento</h2>
+        <p class="lead">Conte o que você quer proteger. Respondemos pelo WhatsApp e combinamos a visita técnica.</p>
+        <div class="info">
+          <p><b>WhatsApp</b><br><span id="fone">(00) 00000-0000</span></p>
+          <p><b>E-mail</b><br>contato@shieldcftv.com.br</p>
+          <p><b>Atendimento</b><br>Segunda a sábado, em horário comercial</p>
+        </div>
+      </div>
+      <form id="fm" onsubmit="return false">
+        <label for="nm">Seu nome<input id="nm" autocomplete="name"></label>
+        <label for="tp">Tipo de local
+          <select id="tp"><option>Casa</option><option>Comércio</option><option>Condomínio</option><option>Indústria</option></select></label>
+        <label for="qt">Quantas câmeras você imagina?
+          <select id="qt"><option>Ainda não sei</option><option>1 a 2</option><option>3 a 4</option><option>5 a 8</option><option>Mais de 8</option></select></label>
+        <label for="ob">Conte mais (opcional)<textarea id="ob"></textarea></label>
+        <a class="btn btn-p" id="wa" href="#contato" target="_blank" rel="noopener">Enviar pelo WhatsApp</a>
+        <p class="help">Abre o WhatsApp com a mensagem pronta. Você confere e envia.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Shield CFTV</span><span>Aluguel e instalação de câmeras de segurança</span></div>
+</footer>
+
+<script>
+/* Troque pelo WhatsApp da Shield: código do país + DDD + número, só dígitos. */
+const WA='5500000000000';
+const $=id=>document.getElementById(id);
+const p=n=>String(n).padStart(2,'0');
+function tick(){const d=new Date();$('clk').textContent=`${p(d.getDate())}/${p(d.getMonth()+1)}/${d.getFullYear()} ${p(d.getHours())}:${p(d.getMinutes())}:${p(d.getSeconds())}`}
+tick();setInterval(tick,1000);
+function upd(){
+  const nome=$('nm').value.trim(),ob=$('ob').value.trim();
+  const msg=`Olá, sou ${nome||'um cliente'}. Quero alugar câmeras de segurança para ${$('tp').value.toLowerCase()}. Quantidade de câmeras: ${$('qt').value.toLowerCase()}.`+(ob?` ${ob}`:'');
+  $('wa').href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg);
+}
+['nm','tp','qt','ob'].forEach(id=>{$(id).addEventListener('input',upd);$(id).addEventListener('change',upd)});
+upd();
+</script>
+
+</body></html>
